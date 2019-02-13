@@ -1,0 +1,7 @@
+name: DiamondsAwesomePlugin
+version: 0.1
+main: io.github.MrDiamond123.DiamondAwesomePlugin.DiamondAwesomePlugin
+commands:
+  dfly:
+    description: Allows you to fly (dap.dfly) and toggle flight for other people (dap.dfly.others)
+    usage: /dfly [username]
