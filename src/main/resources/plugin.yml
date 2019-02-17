@@ -5,3 +5,6 @@ commands:
   dfly:
     description: Allows you to fly (dap.dfly) and toggle flight for other people (dap.dfly.others)
     usage: /dfly [username]
+  dstatus:
+    description: Allows you to a view player's info
+    usage: /dstatus [username]
