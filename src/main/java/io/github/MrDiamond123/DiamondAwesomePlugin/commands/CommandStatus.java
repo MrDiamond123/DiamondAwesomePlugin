@@ -21,27 +21,28 @@ public class CommandStatus implements CommandExecutor {
      */
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("dap.dstatus")) {
-            if(args.length == 0) {
-                sender.sendMessage("Sorry, but you need to put in a player's name!");
-                return false;
-            } else {
-                Player player = Bukkit.getPlayer(args[0]);
-                if (player == null) {
-                    sender.sendMessage("Sorry, but that is a invalid player!");
-                } else {
-                    sender.sendMessage("PLAYER INFO");
-                    sender.sendMessage("Username: " + player.getName());
-                    sender.sendMessage("Display name: " + player.getDisplayName());
-                    sender.sendMessage("Health: " + player.getHealth());
-                    sender.sendMessage("Hunger: " + player.getFoodLevel());
-                    sender.sendMessage("Allowed to fly: " + player.getAllowFlight());
-                    sender.sendMessage("Flying: " + player.isFlying());
-
-                }
-
+        	if (args.length != 0) {
+	            Player player = Bukkit.getPlayer(args[0]);
+	            if (player == null) {
+	                sender.sendMessage("Sorry, but that is a not a player!");
+	                return false;
+	            } else {
+	                sender.sendMessage("PLAYER INFO");
+	                sender.sendMessage("Username: " + player.getName());
+	                sender.sendMessage("Display name: " + player.getDisplayName());
+	                sender.sendMessage("Health: " + player.getHealth());
+	                sender.sendMessage("Hunger: " + player.getFoodLevel());
+	                sender.sendMessage("Allowed to fly: " + player.getAllowFlight());
+	                sender.sendMessage("Flying: " + player.isFlying());
+	                return true;
+	            }
+        	} else {
+        		sender.sendMessage("Sorry, but you need to specify a player.");
+        		return false;
+        	}
+        } else {
+            sender.sendMessage("Sorry, but you need the permission \"dap.dstatus\"");
+            return false;
         }
-        return false;
-    }
-return false;
     }
 }
