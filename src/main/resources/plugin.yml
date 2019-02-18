@@ -1,10 +1,12 @@
 name: DiamondsAwesomePlugin
 version: 0.1
 main: io.github.MrDiamond123.DiamondAwesomePlugin.DiamondAwesomePlugin
+softdepend: [BukkitBasics]
 commands:
   dfly:
     description: Allows you to fly (dap.dfly) and toggle flight for other people (dap.dfly.others)
     usage: /dfly [username]
+
   dstatus:
-    description: Allows you to a view player's info
+    description: Allows you to a view player's info (dap.dstatus)
     usage: /dstatus [username]
